@@ -33,7 +33,7 @@ describe('copies arrow function body block onto hidden class methods', () => {
         const actual = transformFileSync(fixtureFile).code
         const codeWithoutFilename = actual.replace(
           new RegExp(`["']${fixtureFile}["']`, 'g'),
-          '__FILENAME__',
+          `${__FILENAME__}`,
         )
         expect(trim(codeWithoutFilename)).toMatchSnapshot()
       })
