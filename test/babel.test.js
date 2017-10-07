@@ -1,6 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import { transformFileSync } from 'babel-core'
+import escapeStringRegexp from 'escape-string-regexp'
 
 const FIXTURES_DIR = path.join(__dirname, '__babel_fixtures__')
 
@@ -15,7 +16,7 @@ describe('tags potential React components', () => {
       it(fixtureName.split('-').join(' '), () => {
         const actual = transformFileSync(fixtureFile).code
         const codeWithoutFilename = actual.replace(
-          new RegExp(`["']${fixtureFile}["']`, 'g'),
+          new RegExp(`['"]${escapeStringRegexp(fixtureFile)}['"]`, 'g'),
           '__FILENAME__',
         )
         expect(trim(codeWithoutFilename)).toMatchSnapshot()
@@ -32,8 +33,8 @@ describe('copies arrow function body block onto hidden class methods', () => {
       it(fixtureName.split('-').join(' '), () => {
         const actual = transformFileSync(fixtureFile).code
         const codeWithoutFilename = actual.replace(
-          new RegExp(`["']${fixtureFile}["']`, 'g'),
-          `${__FILENAME__}`,
+          new RegExp(`['"]${escapeStringRegexp(fixtureFile)}['"]`, 'g'),
+          '__FILENAME__',
         )
         expect(trim(codeWithoutFilename)).toMatchSnapshot()
       })
