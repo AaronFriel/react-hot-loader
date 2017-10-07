@@ -1144,6 +1144,7 @@ function runAllTests(useWeakMap) {
           const Enhanced = mapProps(props => ({ n: props.n * 5 }))(App)
           RHL.register(Enhanced, 'Enhanced', 'test.js')
           wrapper.setProps({ children: element })
+          wrapper.update()
         }
 
         expect(spy).toHaveBeenCalledTimes(2)
