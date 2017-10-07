@@ -75,7 +75,7 @@ HotContainer.propTypes = {
 
     return undefined
   },
-  errorReporter: React.PropTypes.oneOfType([
+  errorReporter: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.func,
   ]),
