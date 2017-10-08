@@ -1,4 +1,4 @@
-const React = require('react')
+import React, { createElement as reactCreateElement } from 'react'
 const createProxy = require('react-proxy').default
 const global = require('global')
 
@@ -165,7 +165,7 @@ function resolveType(type) {
   return proxy.get()
 }
 
-const createElement = React.createElement
+const createElement = reactCreateElement
 function patchedCreateElement(type, ...args) {
   // Trick React into rendering a proxy so that
   // its state is preserved when the class changes.
