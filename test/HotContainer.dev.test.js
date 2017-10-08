@@ -950,20 +950,25 @@ function runAllTests(useWeakMap) {
 
       it('force updates the tree on receiving cached children', () => {
         const spy = jest.fn()
+        const spyOne = jest.fn()
+        const spyTwo = jest.fn()
 
         const App = () => {
           spy()
+          spyOne()
           return <div>hey</div>
         }
         RHL.register(App, 'App', 'test.js')
 
         const element = <App />
         const wrapper = mount(<HotContainer>{element}</HotContainer>)
+        expect(wrapper.contains(<div>hey</div>)).toBe(true)
         expect(spy).toHaveBeenCalledTimes(1)
 
         {
           const App = () => {
             spy()
+            spyTwo()
             return <div>ho</div>
           }
           RHL.register(App, 'App', 'test.js')
