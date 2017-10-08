@@ -1,6 +1,8 @@
 import '../src/patch.dev'
 import React, { Component } from 'react'
 import { mount } from 'enzyme'
+import createReactClass from 'create-react-class'
+
 import { mapProps } from 'recompose'
 
 import HotContainer from '../src/HotContainer.dev'
@@ -152,8 +154,9 @@ function runAllTests(useWeakMap) {
 
       it('hot-reloads children without losing state', () => {
         class App extends Component {
-          componentWillMount() {
-            this.state = 'old'
+          constructor() {
+            super()
+            this.state = { str: 'old' }
           }
 
           shouldComponentUpdate() {
@@ -161,7 +164,7 @@ function runAllTests(useWeakMap) {
           }
 
           render() {
-            return <div>old render + {this.state} state</div>
+            return <div>old render + {this.state.str} state</div>
           }
         }
         RHL.register(App, 'App', 'test.js')
@@ -175,8 +178,9 @@ function runAllTests(useWeakMap) {
 
         {
           class App extends Component {
-            componentWillMount() {
-              this.state = 'new'
+            constructor() {
+              super()
+              this.state = { str: 'new' }
             }
 
             shouldComponentUpdate() {
@@ -184,7 +188,7 @@ function runAllTests(useWeakMap) {
             }
 
             render() {
-              return <div>new render + {this.state} state</div>
+              return <div>new render + {this.state.str} state</div>
             }
           }
           RHL.register(App, 'App', 'test.js')
@@ -198,8 +202,9 @@ function runAllTests(useWeakMap) {
         const spy = jest.fn()
 
         class App extends Component {
-          componentWillMount() {
-            this.state = 'old'
+          constructor() {
+            super()
+            this.state = { str: 'old' }
           }
 
           shouldComponentUpdate() {
@@ -213,7 +218,7 @@ function runAllTests(useWeakMap) {
           render() {
             return (
               <span onClick={this.handleClick}>
-                old render + {this.state} state
+                old render + {this.state.str} state
               </span>
             )
           }
@@ -232,8 +237,9 @@ function runAllTests(useWeakMap) {
         spy.mockReset()
         {
           class App extends Component {
-            componentWillMount() {
-              this.state = 'new'
+            constructor() {
+              super()
+              this.state = { str: 'new' }
             }
 
             shouldComponentUpdate() {
@@ -247,7 +253,7 @@ function runAllTests(useWeakMap) {
             render() {
               return (
                 <span onClick={this.handleClick}>
-                  new render + {this.state} state
+                  new render + {this.state.str} state
                 </span>
               )
             }
@@ -265,8 +271,9 @@ function runAllTests(useWeakMap) {
         const spy = jest.fn()
 
         class App extends Component {
-          componentWillMount() {
-            this.state = 'old'
+          constructor() {
+            super()
+            this.state = { str: 'old' }
           }
 
           shouldComponentUpdate() {
@@ -280,7 +287,7 @@ function runAllTests(useWeakMap) {
           render() {
             return (
               <span onClick={this.handleClick}>
-                old render + {this.state} state
+                old render + {this.state.str} state
               </span>
             )
           }
@@ -299,8 +306,9 @@ function runAllTests(useWeakMap) {
         spy.mockReset()
         {
           class App extends Component {
-            componentWillMount() {
-              this.state = 'new'
+            constructor() {
+              super()
+              this.state = { str: 'new' }
             }
 
             shouldComponentUpdate() {
@@ -314,7 +322,7 @@ function runAllTests(useWeakMap) {
             render() {
               return (
                 <span onClick={this.handleClick}>
-                  new render + {this.state} state
+                  new render + {this.state.str} state
                 </span>
               )
             }
@@ -335,12 +343,11 @@ function runAllTests(useWeakMap) {
           constructor(props) {
             super(props)
 
+            this.state = { str: 'old' }
+
             this.handleClick = () => {
               spy('foo')
             }
-          }
-          componentWillMount() {
-            this.state = 'old'
           }
 
           shouldComponentUpdate() {
@@ -350,7 +357,7 @@ function runAllTests(useWeakMap) {
           render() {
             return (
               <span onClick={this.handleClick}>
-                old render + {this.state} state
+                old render + {this.state.str} state
               </span>
             )
           }
@@ -369,8 +376,9 @@ function runAllTests(useWeakMap) {
         spy.mockReset()
         {
           class App extends Component {
-            componentWillMount() {
-              this.state = 'new'
+            constructor() {
+              super()
+              this.state = { str: 'new' }
             }
 
             shouldComponentUpdate() {
@@ -384,7 +392,7 @@ function runAllTests(useWeakMap) {
             render() {
               return (
                 <span onClick={this.handleClick}>
-                  new render + {this.state} state
+                  new render + {this.state.str} state
                 </span>
               )
             }
@@ -402,8 +410,9 @@ function runAllTests(useWeakMap) {
         const spy = jest.fn()
 
         class App extends Component {
-          componentWillMount() {
-            this.state = 'old'
+          constructor() {
+            super()
+            this.state = { str: 'old' }
           }
 
           shouldComponentUpdate() {
@@ -415,7 +424,7 @@ function runAllTests(useWeakMap) {
           render() {
             return (
               <span onClick={this.handleClick}>
-                old render + {this.state} state
+                old render + {this.state.str} state
               </span>
             )
           }
@@ -434,8 +443,9 @@ function runAllTests(useWeakMap) {
         spy.mockReset()
         {
           class App extends Component {
-            componentWillMount() {
-              this.state = 'new'
+            constructor() {
+              super()
+              this.state = { str: 'new' }
             }
 
             shouldComponentUpdate() {
@@ -447,7 +457,7 @@ function runAllTests(useWeakMap) {
             render() {
               return (
                 <span onClick={this.handleClick}>
-                  new render + {this.state} state
+                  new render + {this.state.str} state
                 </span>
               )
             }
@@ -468,8 +478,9 @@ function runAllTests(useWeakMap) {
           const spy = jest.fn()
 
           class App extends Component {
-            componentWillMount() {
-              this.state = 'old'
+            constructor() {
+              super()
+              this.state = { str: 'old' }
             }
 
             shouldComponentUpdate() {
@@ -481,7 +492,7 @@ function runAllTests(useWeakMap) {
             render() {
               return (
                 <span onClick={this.handleClick}>
-                  old render + {this.state} state
+                  old render + {this.state.str} state
                 </span>
               )
             }
@@ -500,8 +511,9 @@ function runAllTests(useWeakMap) {
           spy.mockReset()
           {
             class App extends Component {
-              componentWillMount() {
-                this.state = 'new'
+              constructor() {
+                super()
+                this.state = { str: 'new' }
               }
 
               shouldComponentUpdate() {
@@ -513,7 +525,7 @@ function runAllTests(useWeakMap) {
               render() {
                 return (
                   <span onClick={this.handleClick}>
-                    new render + {this.state} state
+                    new render + {this.state.str} state
                   </span>
                 )
               }
@@ -532,7 +544,7 @@ function runAllTests(useWeakMap) {
     describe('with createClass root', () => {
       it('renders children', () => {
         const spy = jest.fn()
-        const App = React.createClass({
+        const App = createReactClass({
           render() {
             spy()
             return <div>hey</div>
@@ -553,7 +565,7 @@ function runAllTests(useWeakMap) {
       it('force updates the tree on receiving new children', () => {
         const spy = jest.fn()
 
-        const App = React.createClass({
+        const App = createReactClass({
           shouldComponentUpdate() {
             return false
           },
@@ -573,7 +585,7 @@ function runAllTests(useWeakMap) {
         expect(spy).toHaveBeenCalledTimes(1)
 
         {
-          const App = React.createClass({
+          const App = createReactClass({
             shouldComponentUpdate() {
               return false
             },
@@ -594,7 +606,7 @@ function runAllTests(useWeakMap) {
       it('force updates the tree on receiving cached children', () => {
         const spy = jest.fn()
 
-        const App = React.createClass({
+        const App = createReactClass({
           shouldComponentUpdate() {
             return false
           },
@@ -611,7 +623,7 @@ function runAllTests(useWeakMap) {
         expect(spy).toHaveBeenCalledTimes(1)
 
         {
-          const App = React.createClass({
+          const App = createReactClass({
             shouldComponentUpdate() {
               return false
             },
@@ -632,7 +644,7 @@ function runAllTests(useWeakMap) {
       it('renders latest children on receiving cached never-rendered children', () => {
         const spy = jest.fn()
 
-        const App = React.createClass({
+        const App = createReactClass({
           shouldComponentUpdate() {
             return false
           },
@@ -648,7 +660,7 @@ function runAllTests(useWeakMap) {
         let wrapper
 
         {
-          const App = React.createClass({
+          const App = createReactClass({
             shouldComponentUpdate() {
               return false
             },
@@ -667,9 +679,9 @@ function runAllTests(useWeakMap) {
       })
 
       it('hot-reloads children without losing state', () => {
-        const App = React.createClass({
-          componentWillMount() {
-            this.state = 'old'
+        const App = createReactClass({
+          getInitialState() {
+            return { str: 'old' }
           },
 
           shouldComponentUpdate() {
@@ -677,7 +689,7 @@ function runAllTests(useWeakMap) {
           },
 
           render() {
-            return <div>old render + {this.state} state</div>
+            return <div>old render + {this.state.str} state</div>
           },
         })
         RHL.register(App, 'App', 'test.js')
@@ -690,9 +702,9 @@ function runAllTests(useWeakMap) {
         expect(wrapper.text()).toBe('old render + old state')
 
         {
-          const App = React.createClass({
-            componentWillMount() {
-              this.state = 'new'
+          const App = createReactClass({
+            getInitialState() {
+              return { str: 'new' }
             },
 
             shouldComponentUpdate() {
@@ -700,7 +712,7 @@ function runAllTests(useWeakMap) {
             },
 
             render() {
-              return <div>new render + {this.state} state</div>
+              return <div>new render + {this.state.str} state</div>
             },
           })
           RHL.register(App, 'App', 'test.js')
@@ -714,7 +726,7 @@ function runAllTests(useWeakMap) {
     describe('with createFactory root', () => {
       it('renders children', () => {
         const spy = jest.fn()
-        const App = React.createClass({
+        const App = createReactClass({
           render() {
             spy()
             return <div>hey</div>
@@ -732,7 +744,7 @@ function runAllTests(useWeakMap) {
       it('force updates the tree on receiving new children', () => {
         const spy = jest.fn()
 
-        const App = React.createClass({
+        const App = createReactClass({
           shouldComponentUpdate() {
             return false
           },
@@ -749,7 +761,7 @@ function runAllTests(useWeakMap) {
         expect(spy).toHaveBeenCalledTimes(1)
 
         {
-          const App = React.createClass({
+          const App = createReactClass({
             shouldComponentUpdate() {
               return false
             },
@@ -771,7 +783,7 @@ function runAllTests(useWeakMap) {
       it('force updates the tree on receiving cached children', () => {
         const spy = jest.fn()
 
-        const App = React.createClass({
+        const App = createReactClass({
           shouldComponentUpdate() {
             return false
           },
@@ -789,7 +801,7 @@ function runAllTests(useWeakMap) {
         expect(spy).toHaveBeenCalledTimes(1)
 
         {
-          const App = React.createClass({
+          const App = createReactClass({
             shouldComponentUpdate() {
               return false
             },
@@ -810,7 +822,7 @@ function runAllTests(useWeakMap) {
       it('renders latest children on receiving cached never-rendered children', () => {
         const spy = jest.fn()
 
-        const App = React.createClass({
+        const App = createReactClass({
           shouldComponentUpdate() {
             return false
           },
@@ -827,7 +839,7 @@ function runAllTests(useWeakMap) {
         let wrapper
 
         {
-          const App = React.createClass({
+          const App = createReactClass({
             shouldComponentUpdate() {
               return false
             },
@@ -846,9 +858,9 @@ function runAllTests(useWeakMap) {
       })
 
       it('hot-reloads children without losing state', () => {
-        const App = React.createClass({
-          componentWillMount() {
-            this.state = 'old'
+        const App = createReactClass({
+          getInitialState() {
+            return { str: 'old' }
           },
 
           shouldComponentUpdate() {
@@ -856,7 +868,7 @@ function runAllTests(useWeakMap) {
           },
 
           render() {
-            return <div>old render + {this.state} state</div>
+            return <div>old render + {this.state.str} state</div>
           },
         })
         RHL.register(App, 'App', 'test.js')
@@ -866,9 +878,9 @@ function runAllTests(useWeakMap) {
         expect(wrapper.text()).toBe('old render + old state')
 
         {
-          const App = React.createClass({
-            componentWillMount() {
-              this.state = 'new'
+          const App = createReactClass({
+            getInitialState() {
+              return { str: 'new' }
             },
 
             shouldComponentUpdate() {
@@ -876,7 +888,7 @@ function runAllTests(useWeakMap) {
             },
 
             render() {
-              return <div>new render + {this.state} state</div>
+              return <div>new render + {this.state.str} state</div>
             },
           })
           RHL.register(App, 'App', 'test.js')
@@ -938,20 +950,25 @@ function runAllTests(useWeakMap) {
 
       it('force updates the tree on receiving cached children', () => {
         const spy = jest.fn()
+        const spyOne = jest.fn()
+        const spyTwo = jest.fn()
 
         const App = () => {
           spy()
+          spyOne()
           return <div>hey</div>
         }
         RHL.register(App, 'App', 'test.js')
 
         const element = <App />
         const wrapper = mount(<HotContainer>{element}</HotContainer>)
+        expect(wrapper.contains(<div>hey</div>)).toBe(true)
         expect(spy).toHaveBeenCalledTimes(1)
 
         {
           const App = () => {
             spy()
+            spyTwo()
             return <div>ho</div>
           }
           RHL.register(App, 'App', 'test.js')
@@ -989,8 +1006,9 @@ function runAllTests(useWeakMap) {
 
       it('hot-reloads children without losing state', () => {
         class App extends Component {
-          componentWillMount() {
-            this.state = 'old'
+          constructor() {
+            super()
+            this.state = { str: 'old' }
           }
 
           shouldComponentUpdate() {
@@ -998,7 +1016,7 @@ function runAllTests(useWeakMap) {
           }
 
           render() {
-            return <div>old render + {this.state} state</div>
+            return <div>old render + {this.state.str} state</div>
           }
         }
         RHL.register(App, 'App', 'test.js')
@@ -1015,8 +1033,9 @@ function runAllTests(useWeakMap) {
 
         {
           class App extends Component {
-            componentWillMount() {
-              this.state = 'new'
+            constructor() {
+              super()
+              this.state = { str: 'new' }
             }
 
             shouldComponentUpdate() {
@@ -1024,7 +1043,7 @@ function runAllTests(useWeakMap) {
             }
 
             render() {
-              return <div>new render + {this.state} state</div>
+              return <div>new render + {this.state.str} state</div>
             }
           }
           RHL.register(App, 'App', 'test.js')
@@ -1130,6 +1149,7 @@ function runAllTests(useWeakMap) {
           const Enhanced = mapProps(props => ({ n: props.n * 5 }))(App)
           RHL.register(Enhanced, 'Enhanced', 'test.js')
           wrapper.setProps({ children: element })
+          wrapper.update()
         }
 
         expect(spy).toHaveBeenCalledTimes(2)
@@ -1172,8 +1192,9 @@ function runAllTests(useWeakMap) {
 
       it('hot-reloads children without losing state', () => {
         class App extends Component {
-          componentWillMount() {
-            this.state = 'old'
+          constructor() {
+            super()
+            this.state = { str: 'old' }
           }
 
           shouldComponentUpdate() {
@@ -1183,7 +1204,7 @@ function runAllTests(useWeakMap) {
           render() {
             return (
               <div>
-                old render + {this.state} state + {this.props.n}
+                old render + {this.state.str} state + {this.props.n}
               </div>
             )
           }
@@ -1202,8 +1223,9 @@ function runAllTests(useWeakMap) {
 
         {
           class App extends Component {
-            componentWillMount() {
-              this.state = 'new'
+            constructor() {
+              super()
+              this.state = { str: 'new' }
             }
 
             shouldComponentUpdate() {
@@ -1213,7 +1235,7 @@ function runAllTests(useWeakMap) {
             render() {
               return (
                 <div>
-                  new render + {this.state} state + {this.props.n}
+                  new render + {this.state.str} state + {this.props.n}
                 </div>
               )
             }
