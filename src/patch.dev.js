@@ -125,11 +125,11 @@ hooks.reset(typeof WeakMap === 'function')
 
 function warnAboutUnnacceptedClass(typeSignature) {
   if (didUpdateProxy) {
-    console.error(
+    console.warn(
       'React Hot Loader: this component is not accepted by Hot Loader. \n' +
-      'Please check is it extracted as a top level class, a function or a variable. \n' +
-      'Click below to reveal the source location: \n',
-      typeSignature
+        'Please check is it extracted as a top level class, a function or a variable. \n' +
+        'Click below to reveal the source location: \n',
+      typeSignature,
     )
   }
 }
@@ -154,7 +154,7 @@ function resolveType(type) {
         knownSignatures[signature] = type
       }
     }
-    return type;
+    return type
   }
 
   const proxy = proxiesByID[id]
