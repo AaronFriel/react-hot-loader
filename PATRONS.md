@@ -1,8 +1,11 @@
 # Patrons
 
-The work on React Hot Loader, [React Transform](https://github.com/gaearon/babel-plugin-react-transform), [Redux](https://github.com/rackt/redux), and related projects was [funded by the community](https://www.patreon.com/reactdx).  
-Meet some of the outstanding companies and individuals that made it possible:
+The work on Rlyeh builds on the contributions of the following individuals and
+corporations. In particular, this project was forked from the
+[`react-hot-loader` project](https://github.com/gaearon/react-hot-loader)
+maintained by Dan Abramov.
 
+* [Dan Abramov](https://twitter.com/dan_abramov)
 * [Webflow](https://github.com/webflow)
 * [Ximedes](https://www.ximedes.com/)
 * [Herman J. Radtke III](http://hermanradtke.com)

@@ -9,12 +9,12 @@ function transform(source, map) {
   // This is a Webpack loader, but the user put it in the Babel config.
   if (source && source.types && source.types.IfStatement) {
     throw new Error(
-      'React Hot Loader: You are erroneously trying to use a Webpack loader ' +
-        'as a Babel plugin. Replace "react-hot-loader/webpack" with ' +
-        '"react-hot-loader/babel-plugin" in the "plugins" section of your .babelrc file. ' +
+      'Rlyeh: You are erroneously trying to use a Webpack loader ' +
+        'as a Babel plugin. Replace "rlyeh/lib/webpack" with ' +
+        '"rlyeh/lib/babel-plugin" in the "plugins" section of your .babelrc file. ' +
         'While we recommend the above, if you prefer not to use Babel, ' +
-        'you may remove "react-hot-loader/webpack" from the "plugins" section of ' +
-        'your .babelrc file altogether, and instead add "react-hot-loader/webpack" ' +
+        'you may remove "rlyeh/lib/webpack" from the "plugins" section of ' +
+        'your .babelrc file altogether, and instead add "rlyeh/lib/webpack" ' +
         'to the "loaders" section of your Webpack configuration.',
     )
   }

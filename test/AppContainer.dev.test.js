@@ -7,7 +7,7 @@ import { mapProps } from 'recompose'
 
 import AppContainer from '../src/AppContainer.dev'
 
-const RHL = global.__REACT_HOT_LOADER__
+const RHL = global.__RLYEH__
 
 function runAllTests(useWeakMap) {
   describe(`<AppContainer /> [useWeakMap == ${useWeakMap}]`, () => {

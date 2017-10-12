@@ -19,7 +19,7 @@ If you don't see some of the messages, or some of the requests, or if some of th
 
 #### Cannot resolve 'file' or 'directory' `react/lib/ReactMount`
 
-If you're using a precompiled React instead of `react` npm package, React Hot Loader configuration will need a few tweaks. See [Usage with External React](https://github.com/gaearon/react-hot-loader/blob/master/docs/README.md#usage-with-external-react).
+If you're using a precompiled React instead of `react` npm package, React Hot Loader configuration will need a few tweaks. See [Usage with External React](https://github.com/gaearon/rlyeh/blob/master/docs/README.md#usage-with-external-react).
 
 Make sure you have `'.js'` in `resolve.extensions` section of Webpack config, or Webpack won't be able to find any JS files without explicitly specifying extension in `require`.
 
@@ -234,7 +234,7 @@ The reason is always the same - React Hot Loader can't understand that old and n
 
 Why? The Component is not extracted as a top level variable. And only such Components React Hot Loader can digest.
 ```js
- const SuperComponent = 
+ const SuperComponent =
      connect()(         <-- last HoC
        withSomeStuff(   <-- first HoC
          Component      <-- a real component
@@ -247,9 +247,9 @@ Solution
 ```js
  const WithSomeStuffComponent = withSomeStuff(Component);
  const SuperComponent = connect()(WithSomeStuffComponent);
-```  
+```
 So yes - it is __absolutely__ impossible to use functional composition and React Hot Loader.
 All temporal variables, steps, spare parts __must__ be separated.
 
 PS: it is possible to create a babel plugin, which will extract all the things. But who will create it?
- 
+

@@ -185,8 +185,8 @@ function patchedCreateFactory(type) {
 }
 patchedCreateFactory.isPatchedByReactHotLoader = true
 
-if (typeof global.__REACT_HOT_LOADER__ === 'undefined') {
+if (typeof global.__RLYEH__ === 'undefined') {
   React.createElement = patchedCreateElement
   React.createFactory = patchedCreateFactory
-  global.__REACT_HOT_LOADER__ = hooks
+  global.__RLYEH__ = hooks
 }

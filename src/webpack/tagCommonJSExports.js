@@ -2,9 +2,9 @@
 
 ;(function register() {
   // eslint-disable-line no-extra-semi
-  /* react-hot-loader/webpack */
+  /* rlyeh/lib/webpack */
   if (process.env.NODE_ENV !== 'production') {
-    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    if (typeof __RLYEH__ === 'undefined') {
       return
     }
 
@@ -16,7 +16,7 @@
     /* eslint-enable camelcase, no-undef */
 
     if (typeof webpackExports === 'function') {
-      __REACT_HOT_LOADER__.register(
+      __RLYEH__.register(
         webpackExports,
         'module.exports',
         __FILENAME__,
@@ -38,7 +38,7 @@
         continue
       }
 
-      __REACT_HOT_LOADER__.register(namedExport, key, __FILENAME__)
+      __RLYEH__.register(namedExport, key, __FILENAME__)
     }
   }
 })()

@@ -3,7 +3,7 @@ import template from 'babel-template'
 const replaced = Symbol('replaced')
 
 const buildRegistration = template(
-  '__REACT_HOT_LOADER__.register(ID, NAME, FILENAME);',
+  '__RLYEH__.register(ID, NAME, FILENAME);',
 )
 const buildSemi = template(';')
 
@@ -11,7 +11,7 @@ const buildSemi = template(';')
 // because it otherwise breaks the output of the babel-node REPL (#359).
 const buildTagger = template(`
 var UNUSED = (function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
@@ -97,11 +97,11 @@ module.exports = function plugin(args) {
     throw new Error(
       'React Hot Loader: You are erroneously trying to use a Babel plugin ' +
         'as a Webpack loader. We recommend that you use Babel, ' +
-        'remove "react-hot-loader/babel-plugin" from the "loaders" section ' +
+        'remove "rlyeh/lib/babel-plugin" from the "loaders" section ' +
         'of your Webpack configuration, and instead add ' +
-        '"react-hot-loader/babel-plugin" to the "plugins" section of your .babelrc file. ' +
-        'If you prefer not to use Babel, replace "react-hot-loader/babel-plugin" with ' +
-        '"react-hot-loader/webpack" in the "loaders" section of your Webpack configuration. ',
+        '"rlyeh/lib/babel-plugin" to the "plugins" section of your .babelrc file. ' +
+        'If you prefer not to use Babel, replace "rlyeh/lib/babel-plugin" with ' +
+        '"rlyeh/lib/webpack" in the "loaders" section of your Webpack configuration. ',
     )
   }
   const { types: t } = args
@@ -242,7 +242,7 @@ module.exports = function plugin(args) {
 
               const { params } = node.value
               const newIdentifier = t.identifier(
-                `__${node.key.name}__REACT_HOT_LOADER__`,
+                `__${node.key.name}__RLYEH__`,
               )
 
               // arrow function body can either be a block statement or a returned expression
@@ -283,7 +283,7 @@ module.exports = function plugin(args) {
                   const isAsync = node.async
                   const { params } = node
                   const newIdentifier = t.identifier(
-                    `__${key.name}__REACT_HOT_LOADER__`,
+                    `__${key.name}__RLYEH__`,
                   )
 
                   // arrow function body can either be a block statement or a returned expression

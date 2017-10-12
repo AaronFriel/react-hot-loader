@@ -1,7 +1,7 @@
 import '../src/patch.dev'
 import React from 'react'
 
-const RHL = global.__REACT_HOT_LOADER__
+const RHL = global.__RLYEH__
 function A1() {}
 function A2() {}
 function A3() {}

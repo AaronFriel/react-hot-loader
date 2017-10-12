@@ -1,4 +1,4 @@
-# React Hot Loader
+# Rlyeh
 
 [![Build Status][build-badge]][build]
 [![version][version-badge]][package]
@@ -16,36 +16,36 @@ Tweak React components in real time ⚛️⚡️
 * Works great with higher order components
 * Requires little configuration
 * Automatically disabled in production
-* Works with or without Babel (you can remove `react-hot-loader/babel-plugin` from `.babelrc` and instead add `react-hot-loader/webpack` to `loaders`)
+* Works with or without Babel (you can remove `rlyeh/lib/babel-plugin` from `.babelrc` and instead add `rlyeh/lib/webpack` to `loaders`)
 * Watch **[Dan Abramov's talk on Hot Reloading with Time Travel](https://www.youtube.com/watch?v=xsSnOQynTHs).**
 
 ## Install
 
 ```
-npm install react-hot-loader
+npm install rlyeh
 ```
 
 ## Getting started
 
-1. Add `react-hot-loader/babel` to your `.babelrc`:
+1. Add `rlyeh/lib/babel` to your `.babelrc`:
 
 ```js
 // .babelrc
 {
-  "plugins": ["react-hot-loader/babel"]
+  "plugins": ["rlyeh/lib/babel"]
 }
 ```
 
 2. [Enable Hot Module Replacement in Webpack](https://webpack.js.org/guides/hot-module-replacement/#enabling-hmr)
 
-3. Add `react-hot-loader/patch` at the top of the entry section (except polyfills) of your Webpack config:
+3. Add `rlyeh/lib/patch` at the top of the entry section (except polyfills) of your Webpack config:
 
 ```js
 // webpack.config.js
 module.exports = {
   entry: [
     'babel-polyfill',
-    'react-hot-loader/patch',
+    'rlyeh/lib/patch',
     './main.js'
   ]
 }
@@ -57,7 +57,7 @@ module.exports = {
 // main.js
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { AppContainer } from 'react-hot-loader'
+import { AppContainer } from 'rlyeh'
 import App from './containers/App'
 
 const render = Component => {
@@ -81,7 +81,7 @@ if (module.hot) {
 
 ## Using Webpack loader instead of Babel plugin
 
-You may not use Babel in your project, React Hot Loader provides a Webpack loader with **[limited support](https://github.com/gaearon/react-hot-loader#known-limitations)**. If you want to use it, you can add it in your Webpack config. **If you use Babel, you don't need to add this loader**.
+You may not use Babel in your project, Rlyeh provides a Webpack loader with **[limited support](https://github.com/gaearon/rlyeh#known-limitations)**. If you want to use it, you can add it in your Webpack config. **If you use Babel, you don't need to add this loader**.
 
 ```js
 // webpack.config.js
@@ -90,7 +90,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        use: ['react-hot-loader/webpack']
+        use: ['rlyeh/lib/webpack']
       }
     ]
   }
@@ -100,19 +100,19 @@ module.exports = {
 ## Migrating from [create-react-app](https://github.com/facebookincubator/create-react-app)
 
 * Run `npm run eject`
-* Install React Hot Loader (`npm install --save-dev react-hot-loader`)
+* Install Rlyeh (`npm install --save-dev rlyeh`)
 * In `config/webpack.config.dev.js`:
-  1. Add `'react-hot-loader/patch'` to entry array (anywhere before `paths.appIndexJs`). It should now look like (excluding comments):
+  1. Add `'rlyeh/lib/patch'` to entry array (anywhere before `paths.appIndexJs`). It should now look like (excluding comments):
   ```js
     entry: [
-       'react-hot-loader/patch',
+       'rlyeh/lib/patch',
        require.resolve('react-dev-utils/webpackHotDevClient'),
        require.resolve('./polyfills'),
        paths.appIndexJs
     ]
   ```
 
-  2. Add `'react-hot-loader/babel'` to Babel loader configuration. The loader should now look like:
+  2. Add `'rlyeh/lib/babel'` to Babel loader configuration. The loader should now look like:
   ```js
     {
        test: /\.(js|jsx)$/,
@@ -123,7 +123,7 @@ module.exports = {
            name: 'react-scripts'
          }),
          plugins: [
-           'react-hot-loader/babel'
+           'rlyeh/lib/babel'
          ]
        }
     }
@@ -138,7 +138,7 @@ When using TypeScript, Babel is not required, so your config should look like ([
 ```js
 {
   test: /\.tsx?$/,
-  loaders: ['react-hot-loader/webpack', 'ts-loader'] // (or awesome-typescript-loader)
+  loaders: ['rlyeh/lib/webpack', 'ts-loader'] // (or awesome-typescript-loader)
 }
 ```
 
@@ -156,7 +156,7 @@ React Native **[supports hot reloading natively](https://facebook.github.io/reac
 
 ## Adding a custom error reporter
 
-The previously used `Redbox` for React Hot Loader has known limitations due to sourcemaps and it's no longer a default catcher. Errors are great to clearly see rendering issues, and avoiding an uncaught error from breaking your app. But there are some advantages to a thrown error in the console too, like filename resolution via sourcemaps, and click-to-open. To get the `Redbox` back, and have the best of both worlds, modify your app entry point as follows:
+The previously used `Redbox` for Rlyeh has known limitations due to sourcemaps and it's no longer a default catcher. Errors are great to clearly see rendering issues, and avoiding an uncaught error from breaking your app. But there are some advantages to a thrown error in the console too, like filename resolution via sourcemaps, and click-to-open. To get the `Redbox` back, and have the best of both worlds, modify your app entry point as follows:
 
 ```js
 import Redbox from 'redbox-react';
@@ -220,10 +220,10 @@ Provided by community:
 
 ### Components not replaced
 
-- React Hot Loader can't replace any Component, only *registered* ones.
+- Rlyeh can't replace any Component, only *registered* ones.
   - when using webpack loader - only module exports are _registered_.
   - when using babel plugin - only top level variables are _registered_.
-  - when React Hot Loader can't replace Component, an error message will be displayed.
+  - when Rlyeh can't replace Component, an error message will be displayed.
 
 ### Code Splitting
 
@@ -246,7 +246,7 @@ Also, if you're using the Webpack 2 beta, you can use `System.import` without ex
 
 ### Checking Element `type`s
 
-Because React Hot Loader creates proxied versions of your components, comparing reference types of elements won't work:
+Because Rlyeh creates proxied versions of your components, comparing reference types of elements won't work:
 
 ```js
 const element = <Component />;
@@ -271,7 +271,7 @@ console.log(<Widget />.type.isWidgetType); // true
 
 ### Reassigning Components
 
-React Hot Loader will only try to reload the original component reference, so if you reassign it to another variable like this:
+Rlyeh will only try to reload the original component reference, so if you reassign it to another variable like this:
 
 ```js
 let App = () => (<div>hello</div>);
@@ -279,7 +279,7 @@ App = connect()(App);
 export default App;
 ```
 
-React Hot Loader won't reload it. Instead, you'll need to define it once:
+Rlyeh won't reload it. Instead, you'll need to define it once:
 
 ```js
 const App = () => (<div>hello</div>);

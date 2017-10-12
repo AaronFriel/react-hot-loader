@@ -10,14 +10,14 @@ class AppContainer extends Component {
   }
 
   componentDidMount() {
-    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    if (typeof __RLYEH__ === 'undefined') {
       console.error(
-        'React Hot Loader: It appears that "react-hot-loader/patch" ' +
+        'React Hot Loader: It appears that "rlyeh/lib/patch" ' +
           'did not run immediately before the app started. Make sure that it ' +
           'runs before any other code. For example, if you use Webpack, ' +
-          'you can add "react-hot-loader/patch" as the very first item to the ' +
+          'you can add "rlyeh/lib/patch" as the very first item to the ' +
           '"entry" array in its config. Alternatively, you can add ' +
-          'require("react-hot-loader/patch") as the very first line ' +
+          'require("rlyeh/lib/patch") as the very first line ' +
           'in the application code, before any other imports.',
       )
     }
