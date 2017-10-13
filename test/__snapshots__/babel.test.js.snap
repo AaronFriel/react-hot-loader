@@ -784,7 +784,7 @@ var Counter = function Counter() {
   _classCallCheck(this, Counter);
 };
 
-var _default = function _default() {
+exports.default = function () {
   return React.createElement(
     \\"div\\",
     null,
@@ -792,7 +792,6 @@ var _default = function _default() {
   );
 };
 
-exports.default = _default;
 ;
 
 var _temp = function () {
@@ -801,8 +800,6 @@ var _temp = function () {
   }
 
   __RLYEH__.register(Counter, \\"Counter\\", __FILENAME__);
-
-  __RLYEH__.register(_default, \\"default\\", __FILENAME__);
 }();
 
 ;"
