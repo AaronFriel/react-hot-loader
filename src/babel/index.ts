@@ -30,19 +30,19 @@ const buildNewClassProperty = (
   let returnExpression = t.callExpression(
     t.memberExpression(t.thisExpression(), newMethodName),
     [t.spreadElement(t.identifier('params'))],
-  )
+  );
 
   if (isAsync) {
-    returnExpression = t.awaitExpression(returnExpression)
+    returnExpression = t.awaitExpression(returnExpression);
   }
 
   const newArrowFunction = t.arrowFunctionExpression(
     [t.restElement(t.identifier('params'))],
     returnExpression,
     isAsync,
-  )
-  return t.classProperty(classPropertyName, newArrowFunction)
-}
+  );
+  return t.classProperty(classPropertyName, newArrowFunction);
+};
 
 const buildNewAssignmentExpression = (
   t,
@@ -56,23 +56,23 @@ const buildNewAssignmentExpression = (
   );
 
   if (isAsync) {
-    returnExpression = t.awaitExpression(returnExpression)
+    returnExpression = t.awaitExpression(returnExpression);
   }
 
   const newArrowFunction = t.arrowFunctionExpression(
     [t.restElement(t.identifier('params'))],
     returnExpression,
     isAsync,
-  )
+  );
   const left = t.memberExpression(
     t.thisExpression(),
     t.identifier(classPropertyName.name),
-  )
+  );
 
-  const replacement = t.assignmentExpression('=', left, newArrowFunction)
-  replacement[replaced] = true
+  const replacement = t.assignmentExpression('=', left, newArrowFunction);
+  replacement[replaced] = true;
 
-  return replacement
+  return replacement;
 };
 
 const classPropertyOptOutVistor = {

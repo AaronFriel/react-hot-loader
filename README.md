@@ -306,17 +306,17 @@ We're also gathering **[Troubleshooting Recipes](https://github.com/gaearon/reac
 
 MIT
 
-[build-badge]: https://img.shields.io/travis/gaearon/react-hot-loader.svg?style=flat-square
-[build]: https://travis-ci.org/gaearon/react-hot-loader
+[build-badge]: https://img.shields.io/travis/AaronFriel/rlyeh.svg?style=flat-square
+[build]: https://travis-ci.org/AaronFriel/rlyeh
 [version-badge]: https://img.shields.io/npm/v/react-hot-loader.svg?style=flat-square
 [package]: https://www.npmjs.com/package/react-hot-loader
 [license-badge]: https://img.shields.io/npm/l/react-hot-loader.svg?style=flat-square
-[license]: https://github.com/gaearon/react-hot-loader/blob/master/LICENSE
+[license]: https://github.com/AaronFriel/rlyeh/blob/master/LICENSE
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
-[chat]: https://gitter.im/gaearon/react-hot-loader
-[chat-badge]: https://img.shields.io/gitter/room/gaearon/react-hot-loader.svg?style=flat-square
-[github-watch-badge]: https://img.shields.io/github/watchers/gaearon/react-hot-loader.svg?style=social
-[github-watch]: https://github.com/gaearon/react-hot-loader/watchers
-[github-star-badge]: https://img.shields.io/github/stars/gaearon/react-hot-loader.svg?style=social
-[github-star]: https://github.com/gaearon/react-hot-loader/stargazers
+[chat]: https://gitter.im/AaronFriel/rlyeh
+[chat-badge]: https://img.shields.io/gitter/room/AaronFriel/rlyeh.svg?style=flat-square
+[github-watch-badge]: https://img.shields.io/github/watchers/AaronFriel/rlyeh.svg?style=social
+[github-watch]: https://github.com/AaronFriel/rlyeh/watchers
+[github-star-badge]: https://img.shields.io/github/stars/AaronFriel/rlyeh.svg?style=social
+[github-star]: https://github.com/AaronFriel/rlyeh/stargazers
