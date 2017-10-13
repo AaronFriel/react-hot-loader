@@ -2,6 +2,7 @@
 declare var __RLYEH__: IRlyeh;
 // Local?:
 declare var __webpack_exports__: any;
+declare var __FILENAME__: string;
 
 (function register() {
   // eslint-disable-line no-extra-semi
@@ -22,7 +23,7 @@ declare var __webpack_exports__: any;
       __RLYEH__.register(
         webpackExports,
         'module.exports',
-        __filename,
+        __FILENAME__,
       );
       return;
     }
@@ -41,7 +42,7 @@ declare var __webpack_exports__: any;
         continue;
       }
 
-      __RLYEH__.register(namedExport, key, __filename);
+      __RLYEH__.register(namedExport, key, __FILENAME__);
     }
   }
 })();
