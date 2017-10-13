@@ -8,7 +8,7 @@ import { makeIdentitySourceMap } from './makeIdentitySourceMap';
 declare var tagCommonJSExportsSource: any;
 declare var map: any;
 
-const transform: loader.Loader = function transform(this, source, sourceMap) {
+const transform: loader.Loader = function(this, source, sourceMap) {
   // This is a Webpack loader, but the user put it in the Babel config.
   {
     const babel: any = source;
