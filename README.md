@@ -5,7 +5,6 @@
 [![MIT License][license-badge]][LICENSE]
 
 [![PRs Welcome][prs-badge]][prs]
-[![Chat][chat-badge]][chat]
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
@@ -308,14 +307,12 @@ MIT
 
 [build-badge]: https://img.shields.io/travis/AaronFriel/rlyeh.svg?style=flat-square
 [build]: https://travis-ci.org/AaronFriel/rlyeh
-[version-badge]: https://img.shields.io/npm/v/react-hot-loader.svg?style=flat-square
-[package]: https://www.npmjs.com/package/react-hot-loader
-[license-badge]: https://img.shields.io/npm/l/react-hot-loader.svg?style=flat-square
+[version-badge]: https://img.shields.io/npm/v/rlyeh.svg?style=flat-square
+[package]: https://www.npmjs.com/package/rlyeh
+[license-badge]: https://img.shields.io/npm/l/rlyeh.svg?style=flat-square
 [license]: https://github.com/AaronFriel/rlyeh/blob/master/LICENSE
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
-[chat]: https://gitter.im/AaronFriel/rlyeh
-[chat-badge]: https://img.shields.io/gitter/room/AaronFriel/rlyeh.svg?style=flat-square
 [github-watch-badge]: https://img.shields.io/github/watchers/AaronFriel/rlyeh.svg?style=social
 [github-watch]: https://github.com/AaronFriel/rlyeh/watchers
 [github-star-badge]: https://img.shields.io/github/stars/AaronFriel/rlyeh.svg?style=social
