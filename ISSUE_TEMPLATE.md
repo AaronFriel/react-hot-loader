@@ -1,4 +1,4 @@
-If you are reporting a bug or having an issue setting up React Hot Loader, please fill in below. For feature requests, feel free to remove this template entirely.
+If you are reporting a bug or having an issue setting up Rlyeh, please fill in below. For feature requests, feel free to remove this template entirely.
 
 ### Description
 
@@ -14,7 +14,7 @@ What actually happens:
 
 ### Environment
 
-React Hot Loader version:
+Rlyeh version:
 
 Run these commands in the project folder and fill in their results:
 

@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "clean": "rimraf lib",
-    "build": "babel src --out-dir lib",
+    "build": "babel src --out-dir lib && tsc",
     "test": "jest",
     "test:watch": "yarn test -- --watch",
     "lint": "eslint .",
@@ -48,8 +48,15 @@
     "source-map": "^0.6.1"
   },
   "devDependencies": {
+    "@types/babel-core": "^6.25.2",
+    "@types/babel-template": "^6.25.0",
+    "@types/babel-traverse": "^6.25.2",
+    "@types/node": "^8.0.34",
+    "@types/prop-types": "^15.5.2",
+    "@types/react": "^16.0.10",
+    "@types/webpack": "^3.0.13",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
+    "babel-core": "6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.2.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -67,11 +74,16 @@
     "eslint-plugin-react": "^7.4.0",
     "jest": "^21.2.1",
     "prettier": "^1.7.4",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0",
     "recompose": "^0.26.0",
-    "rimraf": "^2.5.2"
+    "rimraf": "^2.5.2",
+    "tslint": "5.1.0",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.6.0-dev.20171013"
   },
   "engines": {
     "node": ">= 6"

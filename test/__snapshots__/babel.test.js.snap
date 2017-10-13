@@ -14,13 +14,13 @@ var Foo = function () {
     _classCallCheck(this, Foo);
 
     this.bar = function () {
-      return _this.__bar__REACT_HOT_LOADER__.apply(_this, arguments);
+      return _this.__bar__RLYEH__.apply(_this, arguments);
     };
   }
 
   _createClass(Foo, [{
-    key: \\"__bar__REACT_HOT_LOADER__\\",
-    value: function __bar__REACT_HOT_LOADER__(a, b) {
+    key: \\"__bar__RLYEH__\\",
+    value: function __bar__RLYEH__(a, b) {
       arguments;
 
       return a(b);
@@ -33,11 +33,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -57,13 +57,13 @@ var Foo = function () {
     _classCallCheck(this, Foo);
 
     this.onClick = function () {
-      return _this.__onClick__REACT_HOT_LOADER__.apply(_this, arguments);
+      return _this.__onClick__RLYEH__.apply(_this, arguments);
     };
   }
 
   _createClass(Foo, [{
-    key: \\"__onClick__REACT_HOT_LOADER__\\",
-    value: function __onClick__REACT_HOT_LOADER__(e) {
+    key: \\"__onClick__RLYEH__\\",
+    value: function __onClick__RLYEH__(e) {
       return e.target.value;
     }
   }]);
@@ -74,11 +74,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -107,7 +107,7 @@ var Foo = function () {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.__bar__REACT_HOT_LOADER__.apply(_this, _args);
+                return _this.__bar__RLYEH__.apply(_this, _args);
 
               case 2:
                 return _context.abrupt(\\"return\\", _context.sent);
@@ -127,7 +127,7 @@ var Foo = function () {
   }
 
   _createClass(Foo, [{
-    key: \\"__bar__REACT_HOT_LOADER__\\",
+    key: \\"__bar__RLYEH__\\",
     value: function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(a, b) {
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
@@ -148,11 +148,11 @@ var Foo = function () {
         }, _callee2, this);
       }));
 
-      function __bar__REACT_HOT_LOADER__(_x, _x2) {
+      function __bar__RLYEH__(_x, _x2) {
         return _ref2.apply(this, arguments);
       }
 
-      return __bar__REACT_HOT_LOADER__;
+      return __bar__RLYEH__;
     }()
   }]);
 
@@ -162,11 +162,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -195,7 +195,7 @@ var Foo = function () {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.__bar__REACT_HOT_LOADER__.apply(_this, _args);
+                return _this.__bar__RLYEH__.apply(_this, _args);
 
               case 2:
                 return _context.abrupt(\\"return\\", _context.sent);
@@ -215,7 +215,7 @@ var Foo = function () {
   }
 
   _createClass(Foo, [{
-    key: \\"__bar__REACT_HOT_LOADER__\\",
+    key: \\"__bar__RLYEH__\\",
     value: function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(a, b) {
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
@@ -236,11 +236,11 @@ var Foo = function () {
         }, _callee2, this);
       }));
 
-      function __bar__REACT_HOT_LOADER__(_x, _x2) {
+      function __bar__RLYEH__(_x, _x2) {
         return _ref2.apply(this, arguments);
       }
 
-      return __bar__REACT_HOT_LOADER__;
+      return __bar__RLYEH__;
     }()
   }]);
 
@@ -250,11 +250,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -274,13 +274,13 @@ var Foo = function () {
     _classCallCheck(this, Foo);
 
     this.bar = function () {
-      return _this.__bar__REACT_HOT_LOADER__.apply(_this, arguments);
+      return _this.__bar__RLYEH__.apply(_this, arguments);
     };
   }
 
   _createClass(Foo, [{
-    key: \\"__bar__REACT_HOT_LOADER__\\",
-    value: function __bar__REACT_HOT_LOADER__(a, b) {
+    key: \\"__bar__RLYEH__\\",
+    value: function __bar__RLYEH__(a, b) {
       return a(b);
     }
   }]);
@@ -291,11 +291,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -315,13 +315,13 @@ var Foo = function () {
     _classCallCheck(this, Foo);
 
     this.bar = function () {
-      return _this.__bar__REACT_HOT_LOADER__.apply(_this, arguments);
+      return _this.__bar__RLYEH__.apply(_this, arguments);
     };
   }
 
   _createClass(Foo, [{
-    key: \\"__bar__REACT_HOT_LOADER__\\",
-    value: function __bar__REACT_HOT_LOADER__() {
+    key: \\"__bar__RLYEH__\\",
+    value: function __bar__RLYEH__() {
       var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : \\"foo\\";
 
       return a + \\"bar\\";
@@ -334,11 +334,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -358,13 +358,13 @@ var Foo = function () {
     _classCallCheck(this, Foo);
 
     this.bar = function () {
-      return _this.__bar__REACT_HOT_LOADER__.apply(_this, arguments);
+      return _this.__bar__RLYEH__.apply(_this, arguments);
     };
   }
 
   _createClass(Foo, [{
-    key: \\"__bar__REACT_HOT_LOADER__\\",
-    value: function __bar__REACT_HOT_LOADER__(_ref, _ref2) {
+    key: \\"__bar__RLYEH__\\",
+    value: function __bar__RLYEH__(_ref, _ref2) {
       var a = _ref.a;
       var b = _ref2.b;
 
@@ -378,11 +378,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -402,13 +402,13 @@ var Foo = function () {
     _classCallCheck(this, Foo);
 
     this.onClick = function () {
-      return _this.__onClick__REACT_HOT_LOADER__.apply(_this, arguments);
+      return _this.__onClick__RLYEH__.apply(_this, arguments);
     };
   }
 
   _createClass(Foo, [{
-    key: \\"__onClick__REACT_HOT_LOADER__\\",
-    value: function __onClick__REACT_HOT_LOADER__(e) {
+    key: \\"__onClick__RLYEH__\\",
+    value: function __onClick__RLYEH__(e) {
       return e.target.value;
     }
   }]);
@@ -419,11 +419,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -443,13 +443,13 @@ var Foo = function () {
     _classCallCheck(this, Foo);
 
     this.bar = function () {
-      return _this.__bar__REACT_HOT_LOADER__.apply(_this, arguments);
+      return _this.__bar__RLYEH__.apply(_this, arguments);
     };
   }
 
   _createClass(Foo, [{
-    key: \\"__bar__REACT_HOT_LOADER__\\",
-    value: function __bar__REACT_HOT_LOADER__(a, b) {
+    key: \\"__bar__RLYEH__\\",
+    value: function __bar__RLYEH__(a, b) {
       var _arguments = arguments;
 
       (function () {
@@ -466,11 +466,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -490,13 +490,13 @@ var Foo = function () {
     _classCallCheck(this, Foo);
 
     this.bar = function () {
-      return _this.__bar__REACT_HOT_LOADER__.apply(_this, arguments);
+      return _this.__bar__RLYEH__.apply(_this, arguments);
     };
   }
 
   _createClass(Foo, [{
-    key: \\"__bar__REACT_HOT_LOADER__\\",
-    value: function __bar__REACT_HOT_LOADER__(a, b) {
+    key: \\"__bar__RLYEH__\\",
+    value: function __bar__RLYEH__(a, b) {
       (function () {
         new.target;
       });
@@ -511,11 +511,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -535,13 +535,13 @@ var Foo = function () {
     _classCallCheck(this, Foo);
 
     this.bar = function () {
-      return _this.__bar__REACT_HOT_LOADER__.apply(_this, arguments);
+      return _this.__bar__RLYEH__.apply(_this, arguments);
     };
   }
 
   _createClass(Foo, [{
-    key: \\"__bar__REACT_HOT_LOADER__\\",
-    value: function __bar__REACT_HOT_LOADER__(a, b) {
+    key: \\"__bar__RLYEH__\\",
+    value: function __bar__RLYEH__(a, b) {
       new.target;
 
       return a(b);
@@ -554,11 +554,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -578,11 +578,11 @@ var Foo = function Foo() {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -604,11 +604,11 @@ var Foo = function Foo() {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -628,13 +628,13 @@ var Foo = function () {
     _classCallCheck(this, Foo);
 
     this.bar = function () {
-      return _this.__bar__REACT_HOT_LOADER__.apply(_this, arguments);
+      return _this.__bar__RLYEH__.apply(_this, arguments);
     };
   }
 
   _createClass(Foo, [{
-    key: \\"__bar__REACT_HOT_LOADER__\\",
-    value: function __bar__REACT_HOT_LOADER__(a, b) {
+    key: \\"__bar__RLYEH__\\",
+    value: function __bar__RLYEH__(a, b) {
       return a(b);
     }
   }, {
@@ -650,11 +650,11 @@ var Foo = function () {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -676,11 +676,11 @@ Foo.bar = function (a, b) {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Foo, \\"Foo\\", __FILENAME__);
+  __RLYEH__.register(Foo, \\"Foo\\", __FILENAME__);
 }();
 
 ;"
@@ -751,21 +751,21 @@ exports.default = _default;
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(A, \\"A\\", __FILENAME__);
+  __RLYEH__.register(A, \\"A\\", __FILENAME__);
 
-  __REACT_HOT_LOADER__.register(B, \\"B\\", __FILENAME__);
+  __RLYEH__.register(B, \\"B\\", __FILENAME__);
 
-  __REACT_HOT_LOADER__.register(C, \\"C\\", __FILENAME__);
+  __RLYEH__.register(C, \\"C\\", __FILENAME__);
 
-  __REACT_HOT_LOADER__.register(D, \\"D\\", __FILENAME__);
+  __RLYEH__.register(D, \\"D\\", __FILENAME__);
 
-  __REACT_HOT_LOADER__.register(E, \\"E\\", __FILENAME__);
+  __RLYEH__.register(E, \\"E\\", __FILENAME__);
 
-  __REACT_HOT_LOADER__.register(_default, \\"default\\", __FILENAME__);
+  __RLYEH__.register(_default, \\"default\\", __FILENAME__);
 }();
 
 ;"
@@ -796,13 +796,13 @@ exports.default = _default;
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(Counter, \\"Counter\\", __FILENAME__);
+  __RLYEH__.register(Counter, \\"Counter\\", __FILENAME__);
 
-  __REACT_HOT_LOADER__.register(_default, \\"default\\", __FILENAME__);
+  __RLYEH__.register(_default, \\"default\\", __FILENAME__);
 }();
 
 ;"
@@ -825,11 +825,11 @@ function spread() {
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(spread, \\"spread\\", __FILENAME__);
+  __RLYEH__.register(spread, \\"spread\\", __FILENAME__);
 }();
 
 ;"
@@ -847,13 +847,13 @@ exports.default = _default2;
 ;
 
 var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+  if (typeof __RLYEH__ === 'undefined') {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(_default, \\"_default\\", __FILENAME__);
+  __RLYEH__.register(_default, \\"_default\\", __FILENAME__);
 
-  __REACT_HOT_LOADER__.register(_default2, \\"default\\", __FILENAME__);
+  __RLYEH__.register(_default2, \\"default\\", __FILENAME__);
 }();
 
 ;"

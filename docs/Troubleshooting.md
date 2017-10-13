@@ -1,4 +1,4 @@
-This file serves as a repository of common problems setting up React Hot Loader, and solutions to them.
+This file serves as a repository of common problems setting up Rlyeh, and solutions to them.
 Know a problem? Feel free to send a PR with edits.
 
 ### What Should It Look Like?
@@ -19,19 +19,19 @@ If you don't see some of the messages, or some of the requests, or if some of th
 
 #### Cannot resolve 'file' or 'directory' `react/lib/ReactMount`
 
-If you're using a precompiled React instead of `react` npm package, React Hot Loader configuration will need a few tweaks. See [Usage with External React](https://github.com/gaearon/rlyeh/blob/master/docs/README.md#usage-with-external-react).
+If you're using a precompiled React instead of `react` npm package, Rlyeh configuration will need a few tweaks. See [Usage with External React](https://github.com/gaearon/rlyeh/blob/master/docs/README.md#usage-with-external-react).
 
 Make sure you have `'.js'` in `resolve.extensions` section of Webpack config, or Webpack won't be able to find any JS files without explicitly specifying extension in `require`.
 
 #### SyntaxError: 'import' and 'export' may only appear at the top level
 
-If you're using React Hot Loader together with [Babel](https://babeljs.io/) (ex 6to5), make sure React Hot Loader stays **to the left** of Babel in `loaders` array in Webpack config:
+If you're using Rlyeh together with [Babel](https://babeljs.io/) (ex 6to5), make sure Rlyeh stays **to the left** of Babel in `loaders` array in Webpack config:
 
 ```js
   { test: /\.jsx?$/, loaders: ['react-hot', 'babel'], include: path.join(__dirname, 'src') }
 ```
 
-Webpack applies `loaders` right to left, and we need to feed Babel's *output* to React Hot Loader, not vice versa.
+Webpack applies `loaders` right to left, and we need to feed Babel's *output* to Rlyeh, not vice versa.
 
 #### Error: Invalid path './' (or similar)
 
@@ -53,7 +53,7 @@ If you used WebpackDevServer CLI mode and after switching to Node it crashes wit
 
 ### Module not found: Error: Cannot resolve module 'react-hot'
 
-Most likely you used `npm link` to use a development version of a package in a different folder, and React Hot Loader processed it by mistake. You should use [`include` in loader configuration](https://github.com/gaearon/react-hot-boilerplate/blob/master/webpack.config.js#L22) to only opt-in your app's files to processing.
+Most likely you used `npm link` to use a development version of a package in a different folder, and Rlyeh processed it by mistake. You should use [`include` in loader configuration](https://github.com/gaearon/react-hot-boilerplate/blob/master/webpack.config.js#L22) to only opt-in your app's files to processing.
 
 ---------
 
@@ -65,7 +65,7 @@ Most likely you used `npm link` to use a development version of a package in a d
 
 #### [socket.io] Cannot use 'in' operator to search for 'document' in undefined
 
-Make sure you have `exclude: /node_modules/` or, better, `include: path.join(__dirname, 'src')` (path depends on your application) in loader configuration [just like on this line](https://github.com/gaearon/react-hot-boilerplate/blob/fbdbd93956241320bc3960d350c4dd0030cc6e84/webpack.config.js#L27). You never need to process `node_modules` with React Hot Loader. If you use other loaders such as `jsx?harmony` or `babel`, most likely they **also** need to have `include` specified.
+Make sure you have `exclude: /node_modules/` or, better, `include: path.join(__dirname, 'src')` (path depends on your application) in loader configuration [just like on this line](https://github.com/gaearon/react-hot-boilerplate/blob/fbdbd93956241320bc3960d350c4dd0030cc6e84/webpack.config.js#L27). You never need to process `node_modules` with Rlyeh. If you use other loaders such as `jsx?harmony` or `babel`, most likely they **also** need to have `include` specified.
 
 ---------
 
@@ -173,7 +173,7 @@ Normally you want it to be `'/'` if you're serving scripts from root, something 
 
 #### It's slowing down my build!
 
-Make sure you have `include` limited to your app's modules in loader configuration [just like on this line](https://github.com/gaearon/react-hot-boilerplate/blob/fbdbd93956241320bc3960d350c4dd0030cc6e84/webpack.config.js#L27). You never need to process `node_modules` with React Hot Loader.
+Make sure you have `include` limited to your app's modules in loader configuration [just like on this line](https://github.com/gaearon/react-hot-boilerplate/blob/fbdbd93956241320bc3960d350c4dd0030cc6e84/webpack.config.js#L27). You never need to process `node_modules` with Rlyeh.
 
 #### My bundle is so large!
 
@@ -227,12 +227,12 @@ new WebpackDevServer(webpack(config), {
 
 After this you should be able to access your SPA via any url that has been defined in it.
 
-#### React Hot Loader: this component is not accepted by Hot Loader
+#### Rlyeh: this component is not accepted by Hot Loader
 
-The problem is that React Hot Loader could not replace the `old` version of some Component, by the new one.
-The reason is always the same - React Hot Loader can't understand that old and new is the same Component.
+The problem is that Rlyeh could not replace the `old` version of some Component, by the new one.
+The reason is always the same - Rlyeh can't understand that old and new is the same Component.
 
-Why? The Component is not extracted as a top level variable. And only such Components React Hot Loader can digest.
+Why? The Component is not extracted as a top level variable. And only such Components Rlyeh can digest.
 ```js
  const SuperComponent =
      connect()(         <-- last HoC
@@ -241,14 +241,14 @@ Why? The Component is not extracted as a top level variable. And only such Compo
        )
      );
 ```
-SuperComponent is a top-level variable. And Component is. But withSomeStuff will also produce a (temporal) Component, absolutely invisible to React Hot Loader.
+SuperComponent is a top-level variable. And Component is. But withSomeStuff will also produce a (temporal) Component, absolutely invisible to Rlyeh.
 
 Solution
 ```js
  const WithSomeStuffComponent = withSomeStuff(Component);
  const SuperComponent = connect()(WithSomeStuffComponent);
 ```
-So yes - it is __absolutely__ impossible to use functional composition and React Hot Loader.
+So yes - it is __absolutely__ impossible to use functional composition and Rlyeh.
 All temporal variables, steps, spare parts __must__ be separated.
 
 PS: it is possible to create a babel plugin, which will extract all the things. But who will create it?

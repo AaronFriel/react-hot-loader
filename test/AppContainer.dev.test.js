@@ -1,11 +1,11 @@
-import '../src/patch.dev'
+import '../lib/patch/dev'
 import React, { Component } from 'react'
 import createReactClass from 'create-react-class'
 import { mount } from 'enzyme'
 
 import { mapProps } from 'recompose'
 
-import AppContainer from '../src/AppContainer.dev'
+import AppContainer from '../lib/AppContainer/dev'
 
 const RHL = global.__RLYEH__
 
