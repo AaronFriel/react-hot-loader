@@ -1,6 +1,6 @@
 {
   "name": "rlyeh",
-  "version": "0.27.18.28",
+  "version": "0.3.14.15",
   "description": "Tweak React components in real time.",
   "main": "lib/index.js",
   "files": [

@@ -3,7 +3,9 @@
 import { IAppContainer } from './types';
 
 export default IAppContainer;
-module.exports =
-    (process.env.NODE_ENV !== 'production' && module.hot !== undefined)
-    ? require('./dev')
-    : require('./prods');
+// tslint:disable-next-line:prefer-conditional-expression
+if (process.env.NODE_ENV !== 'production' && module.hot !== undefined) {
+    module.exports = require('./dev');
+} else {
+    module.exports = require('./prod');
+}

@@ -1,14 +1,13 @@
 import { loader } from 'webpack';
 
-import fs from 'fs';
-import path from 'path';
+import * as fs from 'fs';
+import * as path from 'path';
 import { SourceMapConsumer, SourceNode } from 'source-map';
 import { makeIdentitySourceMap } from './makeIdentitySourceMap';
 
-declare var tagCommonJSExportsSource: any;
-declare var map: any;
+let tagCommonJSExportsSource: any;
 
-const transform: loader.Loader = function(this, source, sourceMap) {
+const transform: loader.Loader = function(this, source, sourceMap: any) {
   // This is a Webpack loader, but the user put it in the Babel config.
   {
     const babel: any = source;
@@ -58,11 +57,11 @@ const transform: loader.Loader = function(this, source, sourceMap) {
     return this.callback(null, [source, appendText].join(separator));
   }
 
-  if (!map) {
-    map = makeIdentitySourceMap(source, this.resourcePath); // eslint-disable-line no-param-reassign
+  if (!sourceMap) {
+    sourceMap = makeIdentitySourceMap(source, this.resourcePath); // eslint-disable-line no-param-reassign
   }
   const node = new SourceNode(null, null, null, [
-    SourceNode.fromStringWithSourceMap(source, new SourceMapConsumer(map)),
+    SourceNode.fromStringWithSourceMap(source, new SourceMapConsumer(sourceMap)),
     new SourceNode(null, null, this.resourcePath, appendText),
   ]).join(separator);
 
