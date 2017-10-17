@@ -1,25 +1,7 @@
 import { Node, PluginObj } from 'babel-core';
-import template = require('babel-template');
 
 // @ts-ignore
 const replaced = Symbol('replaced');
-
-const buildRegistration = template(
-  '__RLYEH__.register(ID, NAME, FILENAME);',
-);
-const buildSemi = template(';');
-
-// We're making the IIFE we insert at the end of the file an unused variable
-// because it otherwise breaks the output of the babel-node REPL (#359).
-const buildTagger = template(`
-var UNUSED = (function () {
-  if (typeof __RLYEH__ === 'undefined') {
-    return;
-  }
-
-  REGISTRATIONS
-})();
-`);
 
 const buildNewClassProperty = (
   t,
@@ -93,8 +75,8 @@ const classPropertyOptOutVistor = {
   },
 };
 
-export default function(args): PluginObj<Node> {
-  // This is a Babel plugin, but the user put it in the Webpack config.
+module.exports = function plugin(args): PluginObj<Node> {
+// This is a Babel plugin, but the user put it in the Webpack config.
   if (this && this.callback) {
     throw new Error(
       'Rlyeh: You are erroneously trying to use a Babel plugin ' +
@@ -106,7 +88,23 @@ export default function(args): PluginObj<Node> {
         '"rlyeh/lib/webpack" in the "loaders" section of your Webpack configuration. ',
     );
   }
-  const { types: t } = args;
+  const { types: t, template } = args;
+
+  const buildRegistration = template(
+    '__RLYEH__.register(ID, NAME, FILENAME);',
+  );
+
+  // We're making the IIFE we insert at the end of the file an unused variable
+  // because it otherwise breaks the output of the babel-node REPL (#359).
+  const buildTagger = template(`
+  var UNUSED = (function () {
+    if (typeof __RLYEH__ === 'undefined') {
+      return;
+    }
+
+    REGISTRATIONS
+  })();
+  `);
 
   // No-op in production.
   if (process.env.NODE_ENV === 'production') {
@@ -192,15 +190,14 @@ export default function(args): PluginObj<Node> {
           /* eslint-enable */
         },
 
-        exit(nodePath) {
-          const { node, scope } = nodePath;
+        exit({ node, scope }) {
           const registrations = node[REGISTRATIONS];
           node[REGISTRATIONS] = null; // eslint-disable-line no-param-reassign
 
           // Inject the generated tagging code at the very end
           // so that it is as minimally intrusive as possible.
           // @ts-ignore
-          node.body.push(buildSemi());
+          node.body.push(t.emptyStatement());
           // @ts-ignore
           node.body.push(
             buildTagger({
@@ -209,7 +206,7 @@ export default function(args): PluginObj<Node> {
             }),
           );
           // @ts-ignore
-          node.body.push(buildSemi());
+          node.body.push(t.emptyStatement());
         },
       },
       Class(classPath) {
@@ -327,4 +324,4 @@ export default function(args): PluginObj<Node> {
       },
     },
   };
-}
+};

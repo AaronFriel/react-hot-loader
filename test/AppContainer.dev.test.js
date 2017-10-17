@@ -5,7 +5,7 @@ import { mount } from 'enzyme'
 
 import { mapProps } from 'recompose'
 
-import AppContainer from '../lib/AppContainer/dev'
+import { AppContainer } from '../lib/AppContainer/dev'
 
 const RHL = global.__RLYEH__
 

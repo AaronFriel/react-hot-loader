@@ -1,12 +1,10 @@
 {
   "name": "rlyeh",
-  "version": "0.3.14.15",
+  "version": "0.31.14-15",
   "description": "Tweak React components in real time.",
   "main": "lib/index.js",
   "files": [
-    "lib",
-    "patch.js",
-    "webpack.js"
+    "lib"
   ],
   "scripts": {
     "clean": "rimraf lib",
@@ -14,8 +12,7 @@
     "test": "jest",
     "test:watch": "yarn test -- --watch",
     "lint": "tslint -p tsconfig.json",
-    "prepublish": "yarn clean && yarn build",
-    "format": "prettier --write \"{test,src}/**/*.js\" *.js"
+    "prepublish": "yarn clean && yarn build"
   },
   "repository": {
     "type": "git",
@@ -40,7 +37,6 @@
   },
   "homepage": "https://github.com/AaronFriel/rlyeh",
   "dependencies": {
-    "babel-template": "^6.26.0",
     "global": "^4.3.2",
     "react-deep-force-update": "^2.1.1",
     "react-proxy": "^3.0.0-alpha.0",
@@ -48,7 +44,6 @@
   },
   "devDependencies": {
     "@types/babel-core": "^6.25.2",
-    "@types/babel-template": "^6.25.0",
     "@types/node": "^8.0.34",
     "@types/prop-types": "^15.5.2",
     "@types/react": "^16.0.10",

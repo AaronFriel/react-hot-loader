@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 
 import { IContainerProps, IContainerState } from './types';
 
-export default class AppContainer<P> extends Component<IContainerProps<P>, IContainerState> {
+export class AppContainer<P> extends React.Component<IContainerProps<P>, IContainerState> {
   public render() {
     if (this.props.component !== undefined) {
       if (this.props.props !== undefined) {

@@ -1,11 +1,11 @@
 import { IContainerProps, IContainerState } from './types';
 
-import global = require('global');
-import PropTypes = require('prop-types');
-import React = require('react');
+import * as global from 'global';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import deepForceUpdate = require('react-deep-force-update');
 
-export default class AppContainer<P> extends React.Component<IContainerProps<P>, IContainerState> {
+export class AppContainer<P> extends React.Component<IContainerProps<P>, IContainerState> {
   public static propTypes = {
     children(props: any): any {
       if (React.Children.count(props.children) !== 1) {

@@ -11,7 +11,3 @@ export interface IContainerProps<P> {
 export interface IContainerState {
   error: any;
 }
-
-export interface IAppContainer<P> extends Component<IContainerProps<P>, IContainerState> {
-  new (): Component<IContainerProps<P>, IContainerState>;
-}

@@ -1,11 +1,6 @@
-// tslint:disable:no-require-imports
 // tslint:disable:no-var-requires
-import { IAppContainer } from './types';
+import { AppContainer as ProdAppContainer } from './prod';
 
-export default IAppContainer;
-// tslint:disable-next-line:prefer-conditional-expression
-if (process.env.NODE_ENV !== 'production' && module.hot !== undefined) {
-    module.exports = require('./dev');
-} else {
-    module.exports = require('./prod');
-}
+export let AppContainer: typeof ProdAppContainer = (process.env.NODE_ENV !== 'production' && module.hot !== undefined)
+    ? require('./dev').AppContainer
+    : require('./prod').AppContainer;
