@@ -13,6 +13,7 @@
     "test": "jest",
     "test:watch": "yarn test -- --watch",
     "lint": "tslint -p tsconfig.json",
+    "changelog": "standard-changelog",
     "prepare": "yarn clean && yarn build"
   },
   "repository": {
@@ -65,6 +66,7 @@
     "react-test-renderer": "^16.0.0",
     "recompose": "^0.26.0",
     "rimraf": "^2.6.2",
+    "standard-changelog": "^1.0.5",
     "tslint": "5.8.0",
     "tslint-react": "^3.2.0",
     "typescript": "^2.6.0-dev.20171013"
