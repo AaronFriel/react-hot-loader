@@ -13,7 +13,7 @@
     "test": "jest",
     "test:watch": "yarn test -- --watch",
     "lint": "tslint -p tsconfig.json",
-    "prepublish": "yarn clean && yarn build"
+    "prepare": "yarn clean && yarn build"
   },
   "repository": {
     "type": "git",
@@ -41,7 +41,8 @@
     "global": "^4.3.2",
     "react-deep-force-update": "^2.1.1",
     "react-proxy": "^3.0.0-alpha.0",
-    "source-map": "^0.6.1"
+    "source-map": "^0.6.1",
+    "tslib": "^1.8.0"
   },
   "devDependencies": {
     "@types/babel-core": "^6.25.2",
@@ -64,7 +65,7 @@
     "react-test-renderer": "^16.0.0",
     "recompose": "^0.26.0",
     "rimraf": "^2.6.2",
-    "tslint": "5.7.0",
+    "tslint": "5.8.0",
     "tslint-react": "^3.2.0",
     "typescript": "^2.6.0-dev.20171013"
   },
